@@ -24,8 +24,9 @@
 *.out
 *.run.xml
 *.synctex.gz
-*.backup  # kile
-*.kilepr  # kile project file
+# kile
+*.backup  
+*.kilepr
 
 old
 tests
