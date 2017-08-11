@@ -1,0 +1,31 @@
+# source: https://gist.github.com/kogakure/149016
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.bcf
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.run.xml
+*.synctex.gz
+*.backup  # kile
+*.kilepr  # kile project file
+
+old
+tests

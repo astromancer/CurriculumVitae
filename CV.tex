@@ -1,0 +1,367 @@
+% LaTeX resume using res.cls
+\listfiles
+\documentclass{article}
+
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font
+\usepackage{tabularx}
+\usepackage{fancyhdr}  % use fancyhdr package to get 2-line header
+ \usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usepackage[backend=biber,
+	    style=trad-abbrv]{biblatex}
+\addbibresource{articles.bib}
+\addbibresource{proceedings.bib}
+\addbibresource{shortpub.bib}
+
+
+\usepackage[margin=0.75in]{geometry}
+\setlength{\topmargin}{-0.6in}  % Start text higher on the page 
+\setlength{\textheight}{9.8in}  % increase textheight to fit more on a page
+\setlength{\headsep}{0.2in}     % space between header and text
+\setlength{\headheight}{12pt}   % make room for header
+\setlength{\parindent}{0cm}
+
+
+%\renewcommand{\headrulewidth}{0pt} % suppress line drawn by default by fancyhdr
+\lhead{\hspace*{-\sectionwidth}Hannes Breytenbach} % force lhead all the way left
+\rhead{Page \thepage}  % put page number at right
+\cfoot{}  % the footer is empty
+\pagestyle{fancy} % set pagestyle for the document
+
+
+
+  
+% Custom commands
+\renewcommand{\section}[1]{
+  \vspace{0.4cm}
+  \begin{table}[!htp]					% not h on its own
+    \newcolumntype{C}{>{\centering\arraybackslash}X}	% centering
+    \setlength\extrarowheight{3pt} 			% extra padding
+
+    \noindent 						% otherwise the line will be too wide by \parindent
+    \begin{tabularx}{\textwidth}{C}
+    \hline \hline 
+      \large \textbf{ \textsc{#1} } \\ 
+    \hline \hline
+    \end{tabularx}
+  \end{table}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADING %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document} 
+\thispagestyle{empty} % this page does not have a header
+
+\begin{center}
+  \large\emph{Curriculum Vitae}\\
+  \vspace{0.4cm}
+  \huge \textbf{\textsc{Hannes Breytenbach}}\\
+  \vspace{0.2cm}
+  \normalsize
+  % \emph{16 Hyde Park Apartments \textbullet\ 14 Jetty Street \textbullet\ Foreshore \textbullet\ Cape Town \textbullet\ 8001}\\
+  \emph{email: hannes@saao.ac.za}\\
+  \emph{Cell: +27 82 726 9311}\\
+
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{resume}
+
+\section{Personal Information}
+\begin{tabular}[h!]{l l} 
+  \textbf{Names:}		& Johannes Benjamin Breytenbach\\
+  \textbf{Date of Birth:}	& 26 June 1987	\\
+  \textbf{Place of Birth:}	& Santiago, Chile\\
+  \textbf{Citizenship:}		& South African\\
+  \textbf{Languages:}		& English, Afrikaans (Expert); German (Intermediate) \\
+  \textbf{Current Occupation:}	& PhD. Student at the South African Astronomical Observatory (SAAO) \\& and University of Cape Town, (UCT)\\
+  \textbf{Work Address:}	& Room 431, RW James Building, 9 University Avenue, Upper Campus,\\& UCT, Woolsack Drive, Rondebosch, South Africa
+\end{tabular}
+
+
+\section{Education}
+\begin{tabular}{lll}
+  \textbf{2011 - present:} 	& UCT - \emph{Philosophi\ae\ Doctor} (Astrophysics)\\
+    \multicolumn{3}{c}{\parbox{0.95\textwidth}{
+	\begin{tabular}{p{0.175\linewidth}p{0.8\linewidth}}
+	  \textbullet\ Thesis title: 	& \emph{``Rapid Variability in magnetic Cataclysmic Variable Stars''} \\
+	  \textbullet\ Supervisors:	& Dr. David Buckley, A. Prof Patrick Woudt \\
+	  \textbullet\ Modules: 	& Cataclysmic Variable Stars, Stellar Structures, Advanced General Relativity, Hot Topics in Cosmology, High Energy Astrophysics \\ 
+	\end{tabular} }}
+      \\ \\
+  
+  \textbf{2010:} 		& UCT - \emph{Baccalaureus Scienti\ae\ Honores} (Astrophysics and Space Science) \\
+    \multicolumn{3}{c}{\parbox{0.95\textwidth}{
+	\begin{tabular}{p{0.175\linewidth}p{0.8\linewidth}}
+	  \textbullet\ Project title:	& \emph{``The Sferic Count Rate from SANAE-IV, Antarctica''} \\
+	  \textbullet\ Supervisors:	& Dr. Andrew Collier	\\
+	  \textbullet\ Modules: 	& General Astrophysics, Electrodynamics, General Relativity, Computational Astrophysics, Galaxies and Large Scale Structure, Observational Techniques, Radio Astronomy \\ 
+	\end{tabular} }}
+      \\ \\
+  
+  \textbf{2006 - 2009:} 		& University of Pretoria (UP)-  \emph{Baccalaureus Scienti\ae\ } (Physics and Astronomy) \\ %\ae\
+    \multicolumn{3}{c}{\parbox{0.95\textwidth}{
+	\begin{tabular}{p{0.175\linewidth}p{0.8\linewidth}}
+	  \textbullet\ Project title:	& \emph{``Rutherford Backscattering Spectroscopy and X-ray Diffraction Spectroscopy of Aluminium 100''} \\
+	  \textbullet\ Supervisors:	& Prof. Chris Theron	\\
+	  \textbullet\ Modules: 	& Quantum Mechanics, Solid State Physics, Statistical Mechanics, Differential Calculus, Vector Calculus, Partial Differential Equations, Abstract Algebra, Mathematical Modelling \\ 
+	\end{tabular} }}
+      \\
+      
+\end{tabular}
+
+\section{Awards and Scholarships}
+
+% \begin{itemize}
+\begin{tabular}{ll}
+  \textbullet\ 2013 - present: 		& NRF, Postgraduate Development Programme (PDP) Doctoral Scholarship \\
+  \textbullet\ 2010 - 2012: 		& South African Square Kilometre Array (SKA) Postgraduate Scholarship \\
+  \textbullet\ 2008 - 2009: 		& SKA Undergraduate Bursary Award
+\end{tabular}
+
+ 
+% \end{itemize}
+
+\section{Special Skills}
+
+\large\textbf{Computing}
+\normalsize
+\vspace{0.2cm}
+
+
+\begin{itemize}
+  
+  \item Public code repository: \hspace{1.7cm} \url{ https://github.com/apodemus }
+  
+  \item Languages:\\
+  \begin{tabular}{p{0.5\linewidth}p{0.8\linewidth}}
+    \textbullet\ Python					& (Expert) \\
+    \textbullet\ IRAF, MATLAB (Octave)			& (Highly proficient) \\
+    \textbullet\ IDL, R, C, Mathematica, Maple, LabView & (Intermediate) \\
+    \textbullet\ SQL 					& (Novice)
+  \end{tabular}
+
+%   \begin{itemize}
+%     
+%   \end{itemize}
+ 
+  \item Algorithm Development:
+  \begin{itemize}
+    \item Machine learning algorithms for classification of EEG data (epileptic seizure prediction)
+    \item Time series analysis \& Spectral estimation techniques (Ph.D. Thesis)
+    \item (Unofficial) Data reduction pipeline for Sutherland High Speed Optical Camera (SHOC)
+    \item Computational modelling of Dwarf Novae in Outburst (M.Sc. Thesis)
+  \end{itemize}
+
+\end{itemize}
+
+\vspace{0.2cm}
+\large\textbf{Observing}
+\normalsize
+\vspace{0.2cm}
+\begin{itemize}
+ \item 77 nights on 1.9m telescope at SAAO, Sutherland \\
+ \hspace*{0.4cm} - Rapid photometry of CVs
+ 
+ \item 14 nights on 1.0m telescope at SAAO, Sutherland \\
+ \hspace*{0.4cm} -  Multi-colour(UBVRI) photometry of interacting galaxies \\
+ \hspace*{0.4cm} -  High speed photometry of CVs
+ 
+ \item 7 nights on 1.9m telescope at SAAO, Sutherland \\
+ \hspace*{0.4cm} - Spectroscopy of Dwarf Stars (SkyMapper follow-up)
+ 
+ \item 7 nights on 1.9m telescope at SAAO, Sutherland \\
+ \hspace*{0.4cm} - Polarimetry of magnetic CVs (Assisting)
+ 
+ \item 7 nights on 1.4m Infra-red Survey Facility telescope (IRSF) at SAAO, Sutherland \\
+ \hspace*{0.4cm} - Photometry of interacting galaxies (during ISYA)
+ 
+\end{itemize}
+
+%   \textbullet\ 77 nights on 1.9m telescope at SAAO, Sutherland \\
+%   %\begin{itemize}
+%     \indent - Rapid photometry of CVs \\
+  %\end{itemize}
+  
+%   \textbullet\ 14 nights on 1.0m telescope at SAAO, Sutherland
+%   \begin{itemize}
+%     \item Multi-colour photometry of interacting galaxies
+%     \item High speed photometry of CVs
+%   \end{itemize}
+  
+%   \textbullet\ 7 nights on 1.9m telescope at SAAO, Sutherland
+%   \begin{itemize}
+%     \item Spectroscopy of Dwarf Stars (SkyMapper follow-up)
+%   \end{itemize}
+  
+%   \textbullet\ 7 nights on 1.9m telescope at SAAO, Sutherland
+%   \begin{itemize}
+%     \item Polarimetry of magnetic CVs (Assisting)
+%   \end{itemize}
+%   
+%   \textbullet\ 7 nights on 1.4m Infra-red Survey Facility telescope (IRSF) at SAAO, Sutherland
+%   \begin{itemize}
+%     \item Photometry of interacting galaxies (during ISYA)
+%   \end{itemize}
+  
+% \end{itemize}
+
+% 
+\section{Professional Development}
+
+\large\textbf{Conference Attendance}
+\vspace{0.2cm}
+\normalsize
+\begin{itemize}
+ \item 2015 September: The Golden Age of Cataclysmic Variables and Related Objects - III\\
+ \hspace*{0.4cm} - Presentation: ``Quasi-Periodic Oscillations in magnetic CVs''
+ \item 2015 June: SALT Science Conference 2015, STIAS, Stellenbosch \\
+ \hspace*{0.4cm} - Poster: ``Probing accretion in magnetic CVs through rapid photometry with SALTICAM''
+ \item 2014 July: South African Institute of Physics Conference (SAIP2014)\\
+ \hspace*{0.4cm} - Presentation: ``Rapid Variability of magnetic Cataclysmic Variable Stars''
+ \item 2013 September: The Golden Age of Cataclysmic Variables and Related Objects - II\\
+ \hspace*{0.4cm} - Presentation: ``Modelling Quasi-Periodic Variability in Cataclysmic Variable Stars''
+ \item 2013 July: SKA Joint Radio Transients Conference\\
+ \hspace*{0.4cm}
+ \item 2012 December: SKA Postgraduate Bursary Conference\\
+ \hspace*{0.4cm} - Presentation: ``Modelling Quasi-Periodic Variability in Cataclysmic Variable Stars''
+ \item 2012 August: IAU XXVIII General Assembly\\
+ \hspace*{0.4cm} - Poster: ``Modelling Quasi-Periodic Variability in Cataclysmic Variable Stars''
+ \item 2011 December: SKA Postgraduate Bursary Conference\\
+ \hspace*{0.4cm} - Poster: ``A study of DNOs and QPOs in Cataclysmic Variable Stars''
+ \item 2011 March: Middle-East and African Regional IAU Meeting II (MEARIM-II)
+ \item 2010 - 2008 November: SKA Postgraduate Bursary Conference
+\end{itemize}
+\vspace{0.4cm}
+% 
+\large\textbf{Workshop Attendance}
+\vspace{0.2cm}
+\normalsize
+\begin{itemize}
+ \item 2015 April: GPGPU programming workshop, UCT
+ \item 2014 November: \textsc{GADGET} Simulations workshop, UCT
+ \item 2014 October: $2^{nd}$ Machine learning JEDI Workshop, Cape Town
+ \item 2012 February: IAU International School of Young Astronomers (ISYA), UCT \& SAAO, Cape Town
+ \item 2011 October: Workshop on Space Science and Astrophysics, Centre for High Performance Computing (CHPC), CSIR, Pretoria 
+ \item 2010 December: Workshop on Convection in stars, University of the Witwatersrand (WITS), Johannesburg
+ \item 2010 January: National Astrophysics and Space Science Program (NASSP) Summer School, UCT \& SAAO, Cape Town\\
+\end{itemize}
+
+
+% \vspace{1cm}
+\section{Publications}
+% \vspace{0.2cm}
+
+\begin{refsection}[articles]
+  \nocite{*}
+  \printbibliography[ title={Peer-reviewed},
+		      heading=subbibliography ]
+\end{refsection}
+
+
+\begin{refsection}[proceedings]
+  \nocite{*}
+  \printbibliography[title={Conference Proceedings},
+		     heading=subbibliography]
+\end{refsection}
+
+
+\begin{refsection}[shortpub]
+  \nocite{*}
+  \printbibliography[title={Short publications},
+		     heading=subbibliography]
+\end{refsection}
+
+
+% \begin{refsection}[proceedings]
+%   \nocite{*}
+%   \printbibliography[title={Conference Proceedings},
+% 		     heading=subbibliography]
+% \end{refsection}
+
+% \large\textbf{Short Publications}
+% \normalsize\vspace{0.2cm}
+
+
+
+ 
+ 
+
+\section{Work and Teaching Experience}
+% \vspace{0.2cm}
+\begin{itemize}
+ \item 2013: Tutor: Stellar Structures (AST3002F), UCT
+ \item 2012: Tutor: Introductory Astronomy (AST2002S), UCT
+ \item 2012: Tutor: Introductory Astronomy (private)
+ \item 2011: Tutor: Electrodynamics Honours, NASSP, UCT
+ \item 2009: Tutor: Biological Physics (PHY103), $1^{st}$ year course, UP
+ \item 2007 Dec - Jan: Student Data Processor, Hartebeest Hoek Radio Astronomy Observatory (HartRAO)\\
+\end{itemize}
+
+
+
+\section{Research interests}
+% \vspace{0.2cm}
+\begin{itemize}
+ \item Astrophysical Accretion on all scales
+ \item Compact binary stars
+ \item Machine Learning
+%  \item Multi-wavelength
+%  \item Bayesian Statistics
+ \item Computational Modelling
+\end{itemize}
+
+
+
+\section{Leadership \& Extracurricular Involvements}
+\large\textbf{Academic}
+\vspace{0.2cm}
+\normalsize
+\begin{itemize}
+ \item 2014-2015: Postgraduate Student Representative for Astronomy Dept., UCT
+ \item 2014: Chairperson: UCT Mountain and Ski Club
+ \item 2011 - present: Committee member: UCT Mountain and Ski Club
+ \item 2011: Siyavula Education Program
+ \begin{itemize}
+  \item[-] Tasks: Proof reading and Translation into Afrikaans of open source High School science textbooks
+  \end{itemize}
+\end{itemize} 
+\vspace{0.2cm}
+
+\large\textbf{Sport}
+\vspace{0.2cm}
+\normalsize
+\begin{itemize}
+  \item 2012: UCT Sports Merit Award
+  \begin{itemize}
+      \item[-] UIAA Youth expedition to summit the highest mountain in Europe, Mt Elbrus at 5 642m
+  \end{itemize}
+  \item 2011: UCT Sports Performance of the Year Award
+  \begin{itemize}
+      \item[-] UCT Mountain and Ski Club (MSC) mountaineering expedition to summit the 6 264m Himalayan peak, CB13-A	
+  \end{itemize}
+ 
+\end{itemize}
+
+
+\section{References}
+\begin{itemize}
+ \item Emeritus Distinguished Professor Brian Warner\\Astronomy Department\\University of Cape Town\\Phone: +27 21 650 2391\\email: brian.warner@uct.ac.za
+%  \item 
+ \item Professor Chris Theron\\Head of Department Physics\\ University of Pretoria\\Phone +27 12 420 2455\\email: chris.theron@up.ac.za
+\end{itemize}
+% 
+%  
+%  
+%  
+%  
+%  
+%  
+%  
+%  
+% \end{resume}
+\end{document}
