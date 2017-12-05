@@ -1,0 +1,33 @@
+\listfiles
+
+\documentclass{article}
+
+\usepackage[backend=biber,
+	    style=trad-abbrv]{biblatex}
+
+\usepackage[utf8]{inputenc}
+
+\addbibresource{articles.bib}
+\addbibresource{proceedings.bib}
+
+\begin{document}
+
+Test 
+
+
+
+\begin{refsection}[articles]
+  \nocite{*}
+  \printbibliography[heading=subbibliography]
+\end{refsection}
+
+More text
+
+\begin{refsection}[proceedings]
+  \nocite{*}
+  \printbibliography[title={Further Reading},
+		     heading=subbibliography]
+\end{refsection}
+
+
+\end{document}

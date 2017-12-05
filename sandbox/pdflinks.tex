@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{hyperref}
+
+\makeatletter
+\def\munch#1{}
+\newcommand{\bkmk}[4][0]{%
+ #2#3{\phantomsection%
+  \Hy@writebookmark%
+   {}%
+   {#4}%
+   {\@currentHref}%
+   {#1}%
+   {toc}%
+  #4}%
+ }
+\makeatother
+
+\begin{document}
+
+\section{Real section}
+
+Stuff and things.
+
+\bkmk[2]\subsection*{Bookmarked as a subsection}
+
+More text.
+
+\end{document}
