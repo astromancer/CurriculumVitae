@@ -29,6 +29,9 @@
 *.kilepr
 
 old
-tests
+sandbox
 CV_anno.pdf
 
+CV.fdb_latexmk
+CV.fls
+.kile/curriculumvitae.kilepr.gui
