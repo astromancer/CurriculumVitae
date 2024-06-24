@@ -14,7 +14,7 @@
 \hypersetup{
      colorlinks=true,
      linkcolor=black,
-%     filecolor=magenta,      
+    filecolor=blue,
     urlcolor=blue,
 }
 
@@ -112,16 +112,99 @@
 
 %%%%%%%%%%%%%%%%%%%% Bibliography (Publications) %%%%%%%%%%%%%%%%%%%%
 \usepackage{extern/aas_macros}
-\usepackage[backend=biber,
-            style=trad-abbrv,%numeric
-            sorting=ydnt, %none, % sort by date
-            doi=false,
-            eprint=false,
-            maxbibnames=35]{biblatex}
-      
+\usepackage[
+  backend=biber,
+  style=trad-abbrv,%numeric
+  sorting=ydnt, %none, % sort by date
+  doi=false,
+  url=false,
+  isbn=false,
+  eprint=false,
+  maxbibnames=99
+]{biblatex}
+
 % add style file (abbreviations)
 % \bibliographystyle{aasjournal} # NOT WITH BIBLATEX
 
+% ---------------------------------------------------------------------------- %
+% Better formatting for line breaks in bibliography
+% https://tex.stackexchange.com/a/442317
+% \appto\bibfont{}
+\setlength{\emergencystretch}{1em}
+
+% Line breaks encouraged before page ranges
+\protected\long\def\blx@mkpageprefix#1[#2]#3{%
+  \ifstrequal{#1}{page}
+    {}
+    {\ifnumeral{#3}
+      {\bibstring{#1}\ppspace}
+      {\ifnumerals{#3}
+         {\bibstring{#1s}\ppspace}
+         {\def\pno{\bibstring{#1}}%
+          \def\ppno{\bibstring{#1s}}}}}%
+  \blx@mkpageprefix@i[#2]{#3}}
+
+% ---------------------------------------------------------------------------- %
+% remove comma between author and year in citations
+% \renewcommand*{\nameyeardelim}{\addspace}
+
+%! Remove "In:" (for journal pointers) from bibliography entries 
+\renewbibmacro{in:}{}
+
+% Add line space between bibliography entries
+% \setlength{\bibitemsep}{\baselineskip}
+
+% Don't print `eid' if same as `pages' field
+% https://tex.stackexchange.com/a/297126/102109
+\AtEveryBibitem{\iffieldsequal{eid}{pages}{\clearfield{pages}}{}}
+
+% Don't print url, eprint if doi present
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{
+      \step[fieldsource=doi, final]
+      \step[fieldset=url, null]
+      \step[fieldset=eprint, null]
+    }  
+  }
+}
+% ---------------------------------------------------------------------------- %
+% Hyperlink bib entry titles
+% https://tex.stackexchange.com/a/48409/102109
+
+\newbibmacro{format_bib_title}[1]{%
+  \iffieldundef{doi}{%
+    \iffieldundef{url}{%
+      % \iffieldundef{adsurl}{%
+        \iffieldundef{isbn}{%
+          \iffieldundef{issn}{%
+            #1%
+          }{%
+            \href{https://openlibrary.org/search?issn=\thefield{issn}}{#1}%
+          }%
+        }{%
+          \href{https://openlibrary.org/search?isbn=\thefield{isbn}}{#1}%
+        }%
+      % }{%
+      %   \href{\thefield{url}}{#1}%
+      % }%
+    }{%
+        \href{\thefield{url}}{#1}%
+    }%
+    }{%
+    \href{http://dx.doi.org/\thefield{doi}}{#1}%
+  }%
+}
+
+\DeclareFieldFormat{title}{\usebibmacro{format_bib_title}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article,incollection,inproceedings]{title}%
+    {\usebibmacro{format_bib_title}{\mkbibemph{#1}}}
+
+\DeclareFieldFormat{date}{\bf #1}
+
+% \renewbibmacro{by:}{}
+  
+% ---------------------------------------------------------------------------- %
 % Add content
 \addbibresource{publications/articles.bib}
 \addbibresource{publications/proceedings.bib}
