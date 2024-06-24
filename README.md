@@ -1,4 +1,5 @@
 # CurriculumVitae
+
 I'm a published researcher in the field of astrophysics with a passion for data
 science and data visualization. I am currently completing my MSc in astrophysics
 at University of Cape Town (UCT) and expect to graduate in December 2024. 
@@ -15,3 +16,6 @@ onset of seizures in patients suffering from epilepsy using EEG data.
 My main hobbies are outdoor adventure sports such as rock-climbing and
 high-lining, and I have led- and participated in numerous international
 expeditions to remote mountainous regions on earth.
+
+
+My full CV can be downloaded here: [CV.pdf](../main/CV.pdf "My CV")
